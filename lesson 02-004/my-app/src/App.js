@@ -24,10 +24,20 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
-  return React.createElement('div',{},
-    React.createElement('h2',{},'Lets start'),
-    React.createElement(NewExpense,{}),
-    React.createElement(Expense, {items:expenses})
+  const addExpenseHandler = expense =>{
+    console.log('inapp');
+    console.log(expense);
+  }
+  // return React.createElement('div',{},
+  //   React.createElement('h2',{},'Lets start'),
+  //   React.createElement(NewExpense,{}),
+  //   React.createElement(Expense, {items:expenses})
+  // );
+  return (
+    <div>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
+      <Expense items={expenses}></Expense>
+    </div>
   );
 }
 
